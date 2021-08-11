@@ -11,75 +11,129 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="style.css">
+
     <title>CDDM</title>
-
-    <style>
-        body {
-            background: #000000;
-            color: rgb(0, 0, 255);
-        }
-
-        .wrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            overflow: hidden;
-        }
-
-        #pika {
-            width: 60px;
-            height: 60px;
-            background: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -10px 0 0 -10px;
-            pointer-events: none;
-        }
-    </style>
-
 </head>
 
-<body onload="movePikachu();">
-
-    <audio loop autoplay>
-        <source src="Pikachu Pikachu Pikachu.mp3" type="audio/mp3">
-    </audio>
-
-    <div class="wrap">
-        <img src="https://i.pinimg.com/originals/ab/be/28/abbe28a943ed44fcd98452687f7c46c9.gif" id="pika">
-    </div>
-
+<body>
     <div class="container">
+        <!-- 1st Row -->
         <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input id="name" type="text" class="form-control">
+                    <label for="businessunit">Business Unit</label>
+                    <input id="businessunit" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" class="form-control">
+                    <label for="plant">Plant</label>
+                    <input id="plant" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="date">Date</label>
-                    <input id="date" type="text" class="form-control">
+                    <label for="duedate">Due-Date</label>
+                    <input id="duedate" type="date" class="form-control">
+                </div>
+            </div>
+        </div>
+        <!-- 2nd Row -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="range">Range</label>
+                    <input id="range" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="desiredaccuracy">Desired Accuracy</label>
+                    <input id="desiredaccuracy" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="equipmentnumber">Equipment Number</label>
+                    <input id="equipmentnumber" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <!-- 3rd Row -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="calibrationfrequency">Calibration Frequency</label>
+                    <input id="calibrationfrequency" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="intimationdate">Intimation Date</label>
+                    <input id="intimationdate" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="section">Section</label>
+                    <input id="section" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <!-- 4th Row -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="placeofuse">Place of use</label>
+                    <input id="placeofuse" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="equipmentdescription">Equipment Description</label>
+                    <input id="equipmentdescription" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="lastcalibrationdate">Last Calibration Date</label>
+                    <input id="lastcalibrationdate" type="date" class="form-control">
+                </div>
+            </div>
+        </div>
+        <!-- 5th Row -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input id="status" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <input id="remarks" type="text" class="form-control">
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
+        <div class="container my-3 bg-light">
+            <div class="col-md-12 text-center">
                 <button id="insert" class="btn btn-primary">Insert</button>
                 <button id="select" class="btn btn-primary">Select</button>
                 <button id="update" class="btn btn-primary">Update</button>
                 <button id="delete" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+        
+        <div class="container my-3 bg-light">
+            <div class="col-md-12 text-center">
+                <a href="displaypage.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Go to the display page</a>
             </div>
         </div>
     </div>
@@ -87,103 +141,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
-
-    <script>
-        var firebaseConfig = {
-            apiKey: "",
-            authDomain: "",
-            projectId: "",
-            storageBucket: "",
-            messagingSenderId: "",
-            appId: ""
-        };
-        firebase.initializeApp(firebaseConfig);
-
-        var names, email, date;
-
-        function intial() {
-            names = document.getElementById('name').value;
-            email = document.getElementById('email').value;
-            date = document.getElementById('date').value;
-        }
-
-        document.getElementById('insert').onclick = function () {
-            intial();
-            firebase.database().ref('cddm/' + names).set({
-                name: names,
-                email: email,
-                date: date
-            });
-            console.log("Print Insert");
-        }
-
-        document.getElementById('select').onclick = function () {
-            intial();
-            firebase.database().ref('cddm/' + names).on('value', function (snapshot) {
-                document.getElementById('name').value = snapshot.val().name;
-                document.getElementById('email').value = snapshot.val().email;
-                document.getElementById('date').value = snapshot.val().date;
-            });
-            console.log("Print Select");
-        }
-
-        document.getElementById('update').onclick = function () {
-            intial();
-            firebase.database().ref('cddm/' + names).update({
-                email: email,
-                date: date
-            });
-            console.log("Print Update");
-        }
-
-        document.getElementById('delete').onclick = function () {
-            intial();
-            firebase.database().ref('cddm/' + names).remove();
-            console.log("Print Delete");
-        }
-    </script>
-
-    <script>
-        var $ = document.querySelector.bind(document);
-        var $on = document.addEventListener.bind(document);
-
-        var xmove, ymove;
-        $on('mousemove', function (e) {
-            xmove = e.clientX || e.pageX;
-            ymove = e.clientY || e.pageY;
-        });
-
-        var pika = $('#pika');
-        var x = void 0,
-            y = void 0,
-            dx = void 0,
-            dy = void 0,
-            tx = 0,
-            ty = 0,
-            key = -1;
-        var movePikachu = function movePikachu() {
-            key = requestAnimationFrame(movePikachu);
-            if (!x || !y) {
-                x = xmove;
-                y = ymove;
-            }
-            else {
-                dx = (xmove - x) * 0.125;
-                dy = (ymove - y) * 0.125;
-                if (Math.abs(dx) + Math.abs(dy) < 0.1) {
-                    x = xmove;
-                    y = ymove;
-                }
-                else {
-                    x += dx;
-                    y += dy;
-                }
-            }
-            pika.style.left = x + 'px';
-            pika.style.top = y + 'px';
-        };
-    </script>
-
+    <script src="main.js"></script>
 </body>
 
 </html>

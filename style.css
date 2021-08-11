@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+    font-weight: bold;
+}
+.container{
+    padding-top: 20px;
+    margin-top: 50px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+}
