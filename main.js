@@ -35,7 +35,7 @@ function intial() {
 // Insert Function
 // Insert the value in firebase database as per given reference key
 // Here reference key is equipmentnumber
-document.getElementById('insert').onclick = function () {
+document.getElementById('insert').onclick = function() {
     intial();
     firebase.database().ref('cddm/' + equipmentnumber).set({
         businessunit: businessunit,
@@ -59,9 +59,9 @@ document.getElementById('insert').onclick = function () {
 // Select Function
 // Select the value from firebase database specifed for given reference key
 // Here reference key is equipmentnumber
-document.getElementById('select').onclick = function () {
+document.getElementById('select').onclick = function() {
     intial();
-    firebase.database().ref('cddm/' + equipmentnumber).on('value', function (snapshot) {
+    firebase.database().ref('cddm/' + equipmentnumber).on('value', function(snapshot) {
         document.getElementById('businessunit').value = snapshot.val().businessunit;
         document.getElementById('plant').value = snapshot.val().plant;
         document.getElementById('duedate').value = snapshot.val().duedate;
@@ -83,7 +83,7 @@ document.getElementById('select').onclick = function () {
 // Update Function
 // Update the values in firebase database for the desired reference key
 // Here reference key is equipmentnumber
-document.getElementById('update').onclick = function () {
+document.getElementById('update').onclick = function() {
     intial();
     firebase.database().ref('cddm/' + equipmentnumber).update({
         businessunit: businessunit,
@@ -107,9 +107,14 @@ document.getElementById('update').onclick = function () {
 // Delete Function
 // Delete the data in firebase database for the given reference key
 // Here reference key is equipmentnumber
-document.getElementById('delete').onclick = function () {
-    intial();
-    firebase.database().ref('cddm/' + equipmentnumber).remove();
-    alert("Data for given Equipment Number deleted");
-    console.log("Print Delete");
+document.getElementById('delete').onclick = function() {
+    var check = document.getElementById('equipmentnumber').value;
+    if (check == "") {
+        alert("Cannot delete the item equipment number missing");
+    } else {
+        intial();
+        firebase.database().ref('cddm/' + equipmentnumber).remove();
+        alert("Data for given Equipment Number deleted");
+        console.log("Print Delete");
+    }
 }
